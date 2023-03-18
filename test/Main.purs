@@ -10,7 +10,7 @@ import Effect.Ref as Ref
 import Record as Record
 import ReduxDevTools as DT
 import Simple.JSON as JSON
-import Type.Prelude (SProxy(..))
+import Type.Prelude (Proxy(..))
 
 type State =
   { count :: Int
@@ -26,9 +26,9 @@ type Action = Variant.Variant
   , sub :: Int
   )
 
-countS = SProxy :: SProxy "count"
-addS = SProxy :: SProxy "add"
-subS = SProxy :: SProxy "sub"
+countS = Proxy :: Proxy "count"
+addS = Proxy :: Proxy "add"
+subS = Proxy :: Proxy "sub"
 
 update :: Action -> State -> State
 update action s = Variant.match
